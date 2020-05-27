@@ -1,3 +1,3 @@
-struct MFSwiftCommom {
-    var text = "Hello, World!"
+public struct MFSwiftCommom {
+    static var helloWorld = "Hello, World!"
 }
