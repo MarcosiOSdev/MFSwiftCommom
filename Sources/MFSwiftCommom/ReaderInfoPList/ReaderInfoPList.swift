@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ReaderInfoPlist: Error {
+public enum ReaderInfoPlistError: Error {
     case keyNotFound
 }
 
@@ -25,9 +25,9 @@ public struct ReaderInfoPlist {
      
      - Returns: Retorna um valor do parametro `for`.
      */
-    public static func value<T>(for key: String, in bundle: Bundle) -> T throws {
+    public static func value<T>(for key: String, in bundle: Bundle) throws -> T {
         guard let value = bundle.infoDictionary?[key] as? T else {
-            throw ReaderInfoPlist.keyNotFound
+            throw ReaderInfoPlistError.keyNotFound
         }
         return value
     }
