@@ -9,12 +9,12 @@
 import Foundation
 import Combine
 
-enum DecodeError: Error {
+public enum DecodeError: Error {
     case parsing(description: String)
 }
 
 @available(iOS 13.0, *)
-func decode<Model: Decodable>(_ data: Data) -> AnyPublisher<Model, DecodeError> {
+public func decode<Model: Decodable>(_ data: Data) -> AnyPublisher<Model, DecodeError> {
   let decoder = JSONDecoder()
   decoder.dateDecodingStrategy = .secondsSince1970
   
