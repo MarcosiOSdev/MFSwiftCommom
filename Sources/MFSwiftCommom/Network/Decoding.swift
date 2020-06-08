@@ -13,6 +13,7 @@ enum DecodeError: Error {
     case parsing(description: String)
 }
 
+@available(iOS 13.0, *)
 func decode<Model: Decodable>(_ data: Data) -> AnyPublisher<Model, DecodeError> {
   let decoder = JSONDecoder()
   decoder.dateDecodingStrategy = .secondsSince1970
